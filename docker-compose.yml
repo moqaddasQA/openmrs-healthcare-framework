@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  test-framework:
+    build: .
+    container_name: openmrs-test-framework
+    volumes:
+      - ./target:/app/target
+      - ./allure-results:/app/allure-results
+    environment:
+      - BROWSER=chrome
+      - HEADLESS=true
+      - TEST_ENVIRONMENT=docker
+    networks:
+      - test-network
+
+  allure-report:
+    image: allureorg/allure-server:latest
+    container_name: allure-report-server
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./allure-results:/app/allure-results
+    depends_on:
+      - test-framework
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
