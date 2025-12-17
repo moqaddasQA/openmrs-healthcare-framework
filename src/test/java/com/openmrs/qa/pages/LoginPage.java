@@ -1,7 +1,6 @@
 package com.openmrs.qa.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -107,24 +106,23 @@ public class LoginPage extends BasePage {
 
     private void pickFirstLocation() {
         try {
-            // FIX: Explicitly wait up to 10 seconds for the location tiles to appear
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(allLocations));
+            // Quick check: Are there any locations on the screen right now?
+            List<WebElement> quickCheck = driver.findElements(allLocations);
 
-            List<WebElement> locations = driver.findElements(allLocations);
-
-            if (!locations.isEmpty()) {
-                WebElement firstLocation = locations.getFirst(); // Uses Java 21 syntax
-                logger.info("Location tiles found. Picking: {}", firstLocation.getText());
-
-                // Use JS click to ensure it works reliably
-                JavascriptExecutor executor = (JavascriptExecutor) driver;
-                executor.executeScript("arguments[0].click();", firstLocation);
-            } else {
-                logger.warn("No location tiles found. Proceeding to login without selecting a location.");
+            if (quickCheck.isEmpty()) {
+                logger.info("No locations visible immediately. Skipping wait to save time.");
+                return;
             }
+
+            // If they are present, wait a short moment to ensure they are clickable
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.elementToBeClickable(allLocations));
+
+            quickCheck.getFirst().click();
+            logger.info("Location selected: {}", quickCheck.getFirst().getText());
+
         } catch (Exception e) {
-            logger.error("Error while checking for locations: ", e);
+            logger.debug("Location selection skipped or timed out - this is normal for invalid login tests.");
         }
     }
 }
