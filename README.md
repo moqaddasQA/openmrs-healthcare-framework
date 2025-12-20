@@ -29,6 +29,72 @@
 
 ---
 
+<table><tr>
+<td width="50%" valign="top">
+
+<h3 align="center">🌟 <b>Project Highlights</b></h3>
+<ul>
+   <li>🔬 <b>Hybrid Automation:</b> Selenium + Cucumber + TestNG + REST Assured</li>
+   <li>📦 <b>Modular, Scalable, and Extensible</b></li>
+   <li>📊 <b>Allure & JaCoCo Reporting</b></li>
+   <li>🐳 <b>Docker-Ready for CI/CD</b></li>
+   <li>🛡️ <b>Enterprise-Grade Practices</b></li>
+</ul>
+
+</td>
+<td width="50%" valign="top">
+
+<h3 align="center">🏆 <b>Key Achievements</b></h3>
+<ul>
+   <li>✅ <b>100% Pass Rate</b> - All regression & smoke tests passing</li>
+   <li>⚡ <b>Fast Execution</b> - Parallel & data-driven</li>
+   <li>🧩 <b>Multiple Test Suites</b> - Regression, Smoke, API</li>
+   <li>📝 <b>Rich Documentation</b> - Easy onboarding</li>
+   <li>🌐 <b>OpenMRS Focused</b> - Healthcare domain ready</li>
+</ul>
+
+</td>
+</tr></table>
+
+---
+
+<div align="center">
+
+<h3>🧩 <b>Framework Architecture</b></h3>
+
+<img src="https://raw.githubusercontent.com/moqaddasQA/openmrs-healthcare-framework/main/.github/assets/architecture.png" width="70%"/>
+
+<details>
+<summary>ASCII Diagram</summary>
+
+<pre>
+╔══════════════════════════════════════════════════════════════════╗
+║                        🎯 TEST LAYER                            ║
+║                                                                ║
+║   LoginTest │ RegisterTest │ APIRegression │ BillPayTest       ║
+╚══════════════════════════════════════════════════════════════════╝
+                                                ↓
+╔══════════════════════════════════════════════════════════════════╗
+║                    📄 PAGE OBJECT LAYER                         ║
+║                                                                ║
+║   LoginPage │ RegisterPage │ DashboardPage │ APIPage           ║
+╚══════════════════════════════════════════════════════════════════╝
+                                                ↓
+╔══════════════════════════════════════════════════════════════════╗
+║                    🛠️ UTILITIES LAYER                           ║
+║                                                                ║
+║  DriverFactory │ ConfigManager │ DataProvider │ ReportingUtils  ║
+╚══════════════════════════════════════════════════════════════════╝
+</pre>
+
+</details>
+
+</div>
+
+---
+
+---
+
 ## 📑 Table of Contents
 - [🎯 Features](#-features)
 - [🏗️ Architecture Overview](#️-architecture-overview)
