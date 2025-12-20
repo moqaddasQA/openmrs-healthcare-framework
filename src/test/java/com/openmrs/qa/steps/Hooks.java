@@ -1,32 +1,32 @@
 package com.openmrs.qa.steps;
 
-import com.openmrs.qa.utilities.DriverFactory;
+import com.openmrs.qa.utilities.DriverFactory; // Or wherever your Driver is initialized
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class Hooks {
+import java.io.ByteArrayInputStream;
 
-    @Before
-    public void setUp() {
-        // Optional: Any setup before EACH scenario
-        // Driver is initialized lazily in the Steps, but you could do it here too.
-    }
+public class Hooks {
 
     @After
     public void tearDown(Scenario scenario) {
-        WebDriver driver = DriverFactory.getDriver();
-
+        // Only take a screenshot if the scenario FAILED
         if (scenario.isFailed()) {
-            // Take Screenshot on Failure
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", "Failed Screen");
+            WebDriver driver = DriverFactory.getDriver();
+            if (driver != null) {
+                // 1. Take the screenshot as a byte array
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+                // 2. Attach it to the Allure Report
+                Allure.addAttachment("Screenshot on Failure", new ByteArrayInputStream(screenshot));
+            }
         }
 
-        // Close the driver after EACH scenario to ensure a clean slate for the next one
+        // Optional: Quit driver here if you aren't doing it elsewhere
         DriverFactory.closeDriver();
     }
 }

@@ -77,14 +77,21 @@ public class LoginPage extends BasePage {
         return ""; // Return empty string if no error found
     }
 
-    // Helper method to check if element is present without throwing exception
     private boolean isElementPresent(By locator) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            // 1. Set wait to 0 to check instantly
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+
+            // 2. Use a short 2-second Explicit wait for the check
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
             return true;
         } catch (Exception e) {
             return false;
+        } finally {
+            // 3. ALWAYS set it back to your global 10 or 20 seconds
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
     }
 
