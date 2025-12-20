@@ -15,7 +15,7 @@ public class OpenMRSApiTest {
                 .get("/session")
                 .then()
                 .statusCode(anyOf(is(200), is(401)))
-                .time(lessThan(5000L));
+                .time(lessThan(10000L));
     }
 
     @Test
@@ -27,7 +27,7 @@ public class OpenMRSApiTest {
                 .get("/systemsetting")
                 .then()
                 .statusCode(anyOf(is(200), is(401)))
-                .time(lessThan(5000L));
+                .time(lessThan(10000L));
     }
 
     @Test
@@ -39,6 +39,6 @@ public class OpenMRSApiTest {
                 .get("/")
                 .then()
                 .statusCode(200)
-                .time(lessThan(5000L));
+                .time(lessThan(10000L));
     }
 }

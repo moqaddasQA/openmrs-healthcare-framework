@@ -1,5 +1,8 @@
 package com.openmrs.qa.steps;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 import com.openmrs.qa.pages.LoginPage;
 import com.openmrs.qa.utilities.ConfigReader;
 import com.openmrs.qa.utilities.DriverFactory;
@@ -25,15 +28,15 @@ public class LoginSteps {
 
     @Then("I should see the Login Page title {string}")
     public void i_should_see_the_login_page_title(String expectedTitle) {
-        // Dynamic: Gets actual title from browser
-        String actualTitle = driver.getTitle();
-        System.out.println("Verifying Title. Expected: '" + expectedTitle + "', Found: '" + actualTitle + "'");
+        // Best Practice: Explicit Wait
+        // Wait up to 10 seconds for the title to actually contain the expected text
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.titleContains(expectedTitle));
 
-        // Assertion
-        if (actualTitle != null) {
-            Assert.assertTrue(actualTitle.contains(expectedTitle),
-                    "Page title did not match! Expected to contain: " + expectedTitle + " but found: " + actualTitle);
-        }
+        // Now assert the value (it is guaranteed to be loaded)
+        String actualTitle = driver.getTitle();
+        Assert.assertNotNull(actualTitle, "Page title is null!");
+        Assert.assertTrue(actualTitle.contains(expectedTitle), "Page title did not match!");
     }
 
     @When("I enter username {string}")
