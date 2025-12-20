@@ -1,7 +1,7 @@
 @Smoke @Regression
 Feature: OpenMRS Login Functionality
 
-  Scenario: Validate Login Page Loads Successfully
+  Scenario: Scenario: Validate Login Page Loads Successfully (Auto-Trigger Test)
     Given I launch the OpenMRS application
     Then I should see the Login Page title "Login"
 
