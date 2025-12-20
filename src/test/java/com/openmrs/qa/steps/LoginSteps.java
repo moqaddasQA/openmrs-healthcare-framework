@@ -1,5 +1,6 @@
 package com.openmrs.qa.steps;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
@@ -46,7 +47,6 @@ public class LoginSteps {
     }
 
 
-
     @And("I enter password {string}")
     public void iEnterPassword(String password) {
         // Dynamic: Uses Page Object Model - no hardcoding
@@ -62,10 +62,16 @@ public class LoginSteps {
 
     @Then("I should see the error message {string}")
     public void iShouldSeeTheErrorMessage(String expectedErrorMessage) {
-        // Dynamic: Gets error message from page using Page Object Model
-        String actualErrorMessage = loginPage.getErrorMessage();
-        System.out.println("Expected Error: '" + expectedErrorMessage + "', Actual Error: '" + actualErrorMessage + "'");
+        // FIX: Wait for the error message to actually appear
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+        // This locator matches the one in your LoginPage logs
+        By errorLocator = By.xpath("//*[contains(text(), 'Invalid') or contains(text(), 'invalid')]");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+
+        // Now it is safe to check the text
+        // (We manually grab the text here to be 100% sure, bypassing any issues in the Page Object)
+        String actualErrorMessage = driver.findElement(errorLocator).getText();
         Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage),
                 "Error message did not match! Expected: " + expectedErrorMessage + " but found: " + actualErrorMessage);
     }
