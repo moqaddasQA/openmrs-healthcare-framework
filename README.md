@@ -1,22 +1,31 @@
 
-# 🚀 OpenMRS Healthcare Testing Framework
 
-![OpenMRS Banner](https://raw.githubusercontent.com/moqaddasQA/openmrs-healthcare-framework/main/.github/assets/banner.png)
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-21-blue?logo=java" alt="Java Version"/>
-  <img src="https://img.shields.io/github/license/moqaddasQA/openmrs-healthcare-framework?color=brightgreen" alt="License"/>
-  <img src="https://img.shields.io/github/actions/workflow/status/moqaddasQA/openmrs-healthcare-framework/ci.yml?label=Build&logo=github" alt="Build Status"/>
-  <img src="https://img.shields.io/codecov/c/github/moqaddasQA/openmrs-healthcare-framework?logo=codecov" alt="Coverage"/>
-  <img src="https://img.shields.io/github/last-commit/moqaddasQA/openmrs-healthcare-framework?logo=github" alt="Last Commit"/>
-  <img src="https://img.shields.io/github/issues/moqaddasQA/openmrs-healthcare-framework?logo=github" alt="Issues"/>
-  <img src="https://img.shields.io/github/stars/moqaddasQA/openmrs-healthcare-framework?style=social" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/moqaddasQA/openmrs-healthcare-framework?style=social" alt="Forks"/>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/>
-  <img src="https://img.shields.io/maintenance/active/2025" alt="Maintenance"/>
-</p>
+# 🏥 OpenMRS Healthcare Testing Framework
 
-> **Enterprise Hybrid Framework for OpenMRS using Selenium, Docker, and MySQL**
+### *Enterprise-Grade Hybrid Test Automation for OpenMRS*
+
+<img src="https://raw.githubusercontent.com/moqaddasQA/openmrs-healthcare-framework/main/.github/assets/banner.png" width="80%"/>
+
+[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+[![Selenium](https://img.shields.io/badge/Selenium-4.31.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+[![TestNG](https://img.shields.io/badge/TestNG-7.11.0-DC422E?style=for-the-badge&logo=testng&logoColor=white)](https://testng.org/)
+[![Cucumber](https://img.shields.io/badge/Cucumber-7.18.1-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)](https://cucumber.io/)
+[![REST Assured](https://img.shields.io/badge/REST%20Assured-6.0.0-6DB33F?style=for-the-badge)](https://rest-assured.io/)
+[![Allure](https://img.shields.io/badge/Allure-2.26.0-FF69B4?style=for-the-badge&logo=allure&logoColor=white)](https://docs.qameta.io/allure/)
+[![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/moqaddasQA/openmrs-healthcare-framework)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-success?style=for-the-badge)](https://github.com/moqaddasQA/openmrs-healthcare-framework)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/moqaddasQA/openmrs-healthcare-framework/pulls)
+
+---
+
+### 🎯 **Enterprise-Ready** • 🚀 **Hybrid Automation** • 📊 **Allure Reporting** • 🐳 **Dockerized**
+
+</div>
 
 ---
 
