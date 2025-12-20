@@ -1,577 +1,411 @@
-<div align="center">
 
-# 🏦 Banking Regression Framework
+# 🚀 OpenMRS Healthcare Testing Framework
 
-### *Enterprise-Grade Selenium Test Automation for Banking Applications*
+![OpenMRS Banner](https://raw.githubusercontent.com/moqaddasQA/openmrs-healthcare-framework/main/.github/assets/banner.png)
 
-[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
-[![Selenium](https://img.shields.io/badge/Selenium-4.25.0-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
-[![TestNG](https://img.shields.io/badge/TestNG-7.10.2-DC422E?style=for-the-badge&logo=testng&logoColor=white)](https://testng.org/)
-[![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-blue?logo=java" alt="Java Version"/>
+  <img src="https://img.shields.io/github/license/moqaddasQA/openmrs-healthcare-framework?color=brightgreen" alt="License"/>
+  <img src="https://img.shields.io/github/actions/workflow/status/moqaddasQA/openmrs-healthcare-framework/ci.yml?label=Build&logo=github" alt="Build Status"/>
+  <img src="https://img.shields.io/codecov/c/github/moqaddasQA/openmrs-healthcare-framework?logo=codecov" alt="Coverage"/>
+  <img src="https://img.shields.io/github/last-commit/moqaddasQA/openmrs-healthcare-framework?logo=github" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/issues/moqaddasQA/openmrs-healthcare-framework?logo=github" alt="Issues"/>
+  <img src="https://img.shields.io/github/stars/moqaddasQA/openmrs-healthcare-framework?style=social" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/moqaddasQA/openmrs-healthcare-framework?style=social" alt="Forks"/>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/>
+  <img src="https://img.shields.io/maintenance/active/2025" alt="Maintenance"/>
+</p>
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/moqaddasQA/banking-regression-framework)
-[![Test Coverage](https://img.shields.io/badge/coverage-100%25-success?style=for-the-badge)](https://github.com/moqaddasQA/banking-regression-framework)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
-
----
-
-### 🎯 **Production-Ready** • 🚀 **Fast Execution** • 📊 **Comprehensive Reporting** • 🐳 **Docker Ready**
-
-</div>
-
----
-
-## 🌟 Project Highlights
-
-<table>
-<tr>
-<td width="50%">
-
-### 🎯 What This Framework Does
-Automates **critical banking workflows** for the ParaBank demo application, demonstrating enterprise-grade test automation practices with **Page Object Model**, **data-driven testing**, and **CI/CD integration**.
-
-</td>
-<td width="50%">
-
-### 📈 Key Achievements
-- ✅ **100% Pass Rate** - All tests passing
-- ⚡ **~1 Min** - Full regression execution
-- 🎨 **6 Page Objects** - Clean architecture
-- 📝 **4 Test Suites** - Complete coverage
-
-</td>
-</tr>
-</table>
+> **Enterprise Hybrid Framework for OpenMRS using Selenium, Docker, and MySQL**
 
 ---
 
-## ✨ Test Coverage
+## 📑 Table of Contents
+- [🎯 Features](#-features)
+- [🏗️ Architecture Overview](#️-architecture-overview)
+- [⚡ Quick Start](#-quick-start)
+- [📦 Prerequisites](#-prerequisites)
+- [🚀 Installation & Setup](#-installation--setup)
+- [🧪 Running Tests](#-running-tests)
+- [📊 Reports & Coverage](#-reports--coverage)
+- [🔧 Configuration](#-configuration)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Code Examples](#-code-examples)
+- [🤝 Contributing](#-contributing)
+- [📝 Changelog/Roadmap](#-changelogroadmap)
+- [👥 Authors & Acknowledgments](#-authors--acknowledgments)
+- [📄 License](#-license)
+- [🔗 Useful Links](#-useful-links)
 
-```mermaid
-graph LR
-    A[🔐 User Registration] --> B[💳 Account Management]
-    B --> C[💰 Fund Transfers]
-    B --> D[📄 Bill Payments]
-    C --> E[✅ Data-Driven Testing]
-    D --> E
-```
-
-| Test Scenario | Status | Description |
-|--------------|--------|-------------|
-| 🔐 **User Registration** | ✅ Passing | Timestamped user creation with validation |
-| 💰 **Fund Transfers** | ✅ Passing | Dynamic account handling with auto-creation |
-| 📄 **Bill Payments** | ✅ Passing | CSV data-driven with 2 iterations |
-| 🔍 **Login Smoke Test** | ✅ Passing | Fast authentication validation (~7.7s) |
+<p align="right">[⬆️ Back to Top](#readme)</p>
 
 ---
 
-## 🎨 Framework Architecture
+## 🎯 Features
 
-<div align="center">
+| Feature | Description |
+|---------|-------------|
+| ✅ Selenium WebDriver | Modern browser automation |
+| ✅ TestNG & Cucumber | Hybrid BDD & data-driven testing |
+| ✅ REST Assured | API testing integration |
+| ✅ Allure Reports | Rich, interactive test reports |
+| ✅ Docker Support | Containerized test execution |
+| ✅ MySQL Integration | Realistic data scenarios |
+| ✅ Parallel Execution | Fast, scalable test runs |
+| ✅ CI/CD Ready | GitHub Actions & Maven support |
 
-### **Three-Layer Architecture Pattern**
+> **Note:**
+> This framework is designed for extensibility and enterprise-grade healthcare automation.
 
-</div>
+---
+
+## 🏗️ Architecture Overview
 
 ```
-╔═══════════════════════════════════════════════════════════════════╗
-║                        🎯 TEST LAYER                              ║
-║                                                                   ║
-║    LoginTest  │  RegisterTest  │  TransferTest  │  BillPayTest    ║
-╚═══════════════════════════════════════════════════════════════════╝
-                                ↓
-╔═══════════════════════════════════════════════════════════════════╗
-║                    📄 PAGE OBJECT LAYER                           ║
-║                                                                   ║
-║   LoginPage  │  RegisterPage  │  AccountPage  │  TransferPage     ║
-╚═══════════════════════════════════════════════════════════════════╝
-                                ↓
-╔═══════════════════════════════════════════════════════════════════╗
-║                    🛠️ UTILITIES LAYER                             ║
-║                                                                   ║
-║  DriverFactory │ ConfigManager │ DataProvider │ ReportingUtils    ║
-╚═══════════════════════════════════════════════════════════════════╝
++-------------------+
+|   Test Runner     |
+| (TestNG/Cucumber) |
++--------+----------+
+         |
+         v
++--------+----------+
+|   Test Scripts    |
++--------+----------+
+         |
+         v
++--------+----------+
+|  Framework Core   |
+| (Selenium, Utils) |
++--------+----------+
+         |
+         v
++--------+----------+
+|   Docker/MySQL    |
++-------------------+
 ```
 
-<table>
-<tr>
-<td width="33%" align="center">
+> **Info:**
+> Modular, layered design for maintainability and scalability.
 
-**🎯 Test Layer**
-<br/>
-Test classes with
-<br/>
-business logic
 
-</td>
-<td width="33%" align="center">
-
-**📄 Page Objects**
-<br/>
-UI element
-<br/>
-interactions
-
-</td>
-<td width="33%" align="center">
-
-**🛠️ Utilities**
-<br/>
-Shared helper
-<br/>
-functions
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-| Technology | Version | Purpose |
-|:----------:|:-------:|:-------:|
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="40"/> <br/> **Java** | 21 | Core Language |
-| <img src="https://selenium.dev/images/selenium_logo_square_green.png" width="40"/> <br/> **Selenium** | 4.25.0 | Browser Automation |
-| <img src="https://avatars.githubusercontent.com/u/12528662?s=200&v=4" width="40"/> <br/> **TestNG** | 7.10.2 | Test Framework |
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/maven/maven-original.svg" width="40"/> <br/> **Maven** | 3.x | Build Tool |
-| <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" width="40"/> <br/> **ExtentReports** | 5.1.1 | HTML Reports |
-| <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" width="40"/> <br/> **Allure** | 2.26.0 | Test Reporting |
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="40"/> <br/> **Docker** | Latest | Containerization |
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg" width="40"/> <br/> **Jenkins** | Latest | CI/CD Pipeline |
-
-</div>
-
----
-
-## 🚀 Quick Start
-
-### 📋 Prerequisites
-
-<table>
-<tr>
-<td>
-
-**Required**
-- ☕ Java 21+ ([Download](https://www.oracle.com/java/technologies/downloads/#java21))
-- 📦 Maven 3.x ([Download](https://maven.apache.org/download.cgi))
-- 🔧 Git ([Download](https://git-scm.com/downloads))
-
-</td>
-<td>
-
-**Optional**
-- 🐳 Docker (for Selenium Grid)
-- 🔨 Jenkins (for CI/CD)
-- 📊 Allure CLI (for reports)
-
-</td>
-</tr>
-</table>
-
-### ⚡ Installation
+## ⚡ Quick Start
 
 ```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/moqaddasQA/banking-regression-framework.git
-cd banking-regression-framework
+# 1. Clone the repository
+$ git clone https://github.com/moqaddasQA/openmrs-healthcare-framework.git
 
-# 2️⃣ Verify Java installation
-java -version
-# Expected: java version "21.x.x"
+# 2. Navigate to the project directory
+$ cd openmrs-healthcare-framework
 
-# 3️⃣ Install dependencies
-mvn clean install -DskipTests
+# 3. Build the project
+$ mvn clean install
+
+# 4. Run tests
+$ mvn test
 ```
 
-<div align="center">
-
-### 🎬 **You're Ready to Run Tests!**
-
-</div>
+> **Tip:**
+> Use Docker for isolated, reproducible test environments.
 
 ---
 
-## 🎯 Running Tests
+## 📦 Prerequisites
 
-<table>
-<tr>
-<td width="50%">
+| Tool         | Version |
+|--------------|---------|
+| Java         | ![Java](https://img.shields.io/badge/21-blue?logo=java) |
+| Maven        | ![Maven](https://img.shields.io/badge/3.8%2B-blue?logo=apache-maven) |
+| Docker       | ![Docker](https://img.shields.io/badge/20%2B-blue?logo=docker) |
+| ChromeDriver | ![Chrome](https://img.shields.io/badge/Latest-blue?logo=google-chrome) |
 
-### 🔥 Quick Commands
+> **Warning:**
+> Ensure all prerequisites are installed and available in your PATH.
+
+---
+
+## 🚀 Installation & Setup
+
+<details>
+<summary>Expand for detailed setup instructions</summary>
 
 ```bash
-# Run all tests
-mvn clean test
+# Install dependencies
+$ mvn clean install
 
-# Smoke tests only
-mvn clean test -Dsurefire.suiteXmlFiles=\
-  src/test/resources/testng-smoke.xml
+# (Optional) Start Docker containers
+$ docker-compose up -d
 
-# Full regression suite
-mvn clean test -Dsurefire.suiteXmlFiles=\
-  src/test/resources/testng-regression.xml
-
-# Specific test class
-mvn clean test -Dtest=TransferFundsTest
+# Configure environment variables in `src/test/resources/framework.properties`
 ```
 
-</td>
-<td width="50%">
+</details>
 
-### ⚙️ Configuration Options
 
-```properties
-# Edit: src/test/resources/framework.properties
+## 🧪 Running Tests
 
-# Browser Settings
-browser.type=chrome
-browser.headless=false  # Set true for CI/CD
+| Option | Command |
+|--------|---------|
+| All Tests | `mvn test` |
+| Regression | `mvn test -Dsuite=regression` |
+| Smoke | `mvn test -Dsuite=smoke` |
+| Cucumber | `mvn verify -Dcucumber.options="--tags @smoke"` |
+| Docker | `docker-compose run test` |
 
-# Application
-app.url=https://parabank.parasoft.com/
+> **Note:**
+> Test results are output to `target/allure-results` and `target/surefire-reports`.
 
-# Credentials
-user.name=Moqaddas
-user.password=123456
-
-# Timeouts (seconds)
-implicit.wait=10
-explicit.wait=15
-```
-
-</td>
-</tr>
-</table>
-
----
-
-## 📊 Test Reports & Results
-
-<div align="center">
-
-### 🏆 Latest Test Run Results
-
-| Metric | Value | Status |
-|:------:|:-----:|:------:|
-| **Tests Run** | 3 | ✅ |
-| **Passed** | 3 | 💚 |
-| **Failed** | 0 | ✅ |
-| **Execution Time** | 51.79s | ⚡ |
-| **Pass Rate** | 100% | 🎯 |
-
-</div>
-
-### 📈 Report Types
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-**📄 ExtentReports**
-<br/>
-Interactive HTML Dashboard
-<br/>
-`test-output/ExtentReport.html`
-
-</td>
-<td width="33%" align="center">
-
-**🎨 Allure Reports**
-<br/>
-Beautiful Test Analytics
-<br/>
-`mvn allure:serve`
-
-</td>
-<td width="33%" align="center">
-
-**📋 TestNG Reports**
-<br/>
-Standard XML Reports
-<br/>
-`test-output/index.html`
-
-</td>
-</tr>
-</table>
-
-### 📸 Sample Test Output
-
-```diff
-+ ✓ TransferFundsTest.transferSmoke - PASSED (19.2s)
-  User: Moqaddas1204220435
-  Accounts: 25998 → 26109
-  Amount: $100.00
-  
-+ ✓ BillPayTest.billPay[Utility Co] - PASSED (16.4s)
-  User: Moq1204220459495
-  Payee: Utility Co, $89.65
-  
-+ ✓ BillPayTest.billPay[Auto Loan] - PASSED (16.2s)
-  User: Moq1204220513851
-  Payee: Auto Loan, $220.00
-
-🎉 BUILD SUCCESS - All Tests Passed!
-```
-
----
-
-## 🐳 Docker Support
-
-<div align="center">
-
-### Run Tests in Selenium Grid
-
-</div>
-
-```bash
-# Start Selenium Grid
-docker-compose up -d
-
-# Verify Grid is running
-curl http://localhost:4444/status
-
-# Run tests against Grid
-mvn clean test -Dselenium.grid.url=http://localhost:4444
-
-# View Grid console
-open http://localhost:4444
-
-# Stop Grid
-docker-compose down
-```
-
-## Project Structure
-
----
-
-## 🏗️ Framework Features
-
-<div align="center">
-
-| Feature | Description | Benefit |
-|:-------:|:------------|:--------|
-| 🎨 **Page Object Model** | Separation of test logic from UI | Maintainable & reusable code |
-| 📊 **Data-Driven Testing** | CSV-based test data injection | Scalable test scenarios |
-| 🔄 **Dynamic Account Handling** | Runtime account creation & extraction | No manual setup required |
-| ⏰ **Timestamped Users** | Millisecond-precision usernames | Zero conflicts guaranteed |
-| 📈 **Dual Reporting** | ExtentReports + Allure | Beautiful insights |
-| 🐳 **Docker Ready** | Selenium Grid support | Cloud-ready execution |
-| 🤖 **Auto Driver Management** | WebDriverManager integration | No manual downloads |
-| ⚡ **Parallel Execution** | TestNG parallel support | Faster feedback |
-
-</div>
-
----
 
 ## 📁 Project Structure
 
 ```
-banking-regression-framework/
-│
-├── 📂 src/
-│   ├── 📂 main/java/com/moqaddas/banking/
-│   │   ├── 📄 pages/              # 🎨 Page Objects
-│   │   │   ├── BasePage.java
-│   │   │   ├── LoginPage.java
-│   │   │   ├── RegisterPage.java
-│   │   │   ├── 📂 dashboard/
-│   │   │   │   └── AccountOverviewPage.java
-│   │   │   ├── 📂 transfer/
-│   │   │   │   └── TransferFundsPage.java
-│   │   │   └── 📂 billpay/
-│   │   │       └── BillPayPage.java
-│   │   │
-│   │   ├── 📄 support/            # 🛠️ Utilities
-│   │   │   ├── DriverFactory.java
-│   │   │   ├── DriverManager.java
-│   │   │   └── ConfigManager.java
-│   │   │
-│   │   ├── 📄 data/               # 📊 Data Providers
-│   │   │   └── CsvDataProvider.java
-│   │   │
-│   │   └── 📄 reporting/          # 📈 Reports
-│   │       ├── ExtentManager.java
-│   │       └── ScreenshotUtil.java
-│   │
-│   └── 📂 test/
-│       ├── 📂 java/com/moqaddas/banking/tests/
-│       │   ├── BaseTest.java       # 🏗️ Base test class
-│       │   ├── LoginSmokeTest.java
-│       │   ├── RegisterUserTest.java
-│       │   ├── TransferFundsTest.java
-│       │   └── BillPayTest.java
-│       │
-│       └── 📂 resources/
-│           ├── testng-smoke.xml    # 🔥 Smoke suite
-│           ├── testng-regression.xml # 🎯 Regression suite
-│           ├── framework.properties
-│           └── 📂 data/
-│               ├── billpay.csv
-│               └── transfers.csv
-│
-├── 🐳 docker-compose.yml          # Selenium Grid
-├── 🔨 Jenkinsfile                 # CI/CD pipeline
-├── 📦 pom.xml                     # Maven config
-└── 📖 README.md                   # You are here!
+
+├── src/
+│   └── test/
+│       ├── java/
+│       └── resources/
+├── target/
+│   ├── allure-results/
+│   └── surefire-reports/
+├── Dockerfile
+├── docker-compose.yml
+├── pom.xml
+└── README.md
 ```
 
 ---
 
-## 🎓 Key Learnings & Best Practices
+## 🎨 Code Examples
 
-<table>
-<tr>
-<td>
-
-### 💡 What Makes This Framework Special
-
-1. **🔐 Smart User Management**
-   - Timestamped credentials prevent conflicts
-   - Works in parallel and sequential execution
-
-2. **🎯 Dynamic Test Data**
-   - Runtime account ID extraction
-   - Auto-creates missing test prerequisites
-
-3. **📸 Comprehensive Evidence**
-   - Screenshots on failure
-   - Detailed HTML reports
-   - Execution timeline tracking
-
-4. **🔄 Self-Healing Tests**
-   - Handles missing accounts gracefully
-   - Detects and logs validation errors
-   - Configurable wait strategies
-
-</td>
-<td>
-
-### 🚀 Production-Ready Patterns
+<details>
+<summary>Expand for Java & Gherkin examples</summary>
 
 ```java
-// ✅ Fluent Page Object Pattern
-new LoginPage(driver)
-    .loginAs("user", "pass")
-    .goToTransfers()
-    .enterAmount("100.00")
-    .submitTransfer();
-
-// ✅ Dynamic Account Handling
-String accountId = account.getFirstAccountId();
-if (account.getSecondAccountId() == null) {
-    account.openNewAccount();
+// Sample TestNG Test
+@Test
+public void loginTest() {
+      LoginPage login = new LoginPage(driver);
+      login.login("admin", "password");
+      Assert.assertTrue(login.isLoggedIn());
 }
-
-// ✅ Timestamped Users
-String user = "Moq" + 
-    new SimpleDateFormat("MMddHHmmssSSS")
-    .format(new Date());
 ```
 
-</td>
-</tr>
-</table>
+```gherkin
+# Sample Cucumber Scenario
+Feature: Login
+   Scenario: Valid login
+      Given I am on the login page
+      When I enter valid credentials
+      Then I should see the dashboard
+```
+
+</details>
+
+---
+## 📊 Reports & Coverage
+
+- Allure Reports: `target/allure-results` ([Allure Docs](https://docs.qameta.io/allure/))
+- JaCoCo Coverage: `target/site/jacoco/index.html`
+
+![Allure Report Screenshot](https://raw.githubusercontent.com/moqaddasQA/openmrs-healthcare-framework/main/.github/assets/allure-report.png)
+
+> **Note:**
+> Open reports in your browser for interactive dashboards.
 
 ---
 
-## 📚 Documentation
+## 🔧 Configuration
 
-- 📖 [Full Documentation](#) *(Coming Soon)*
-- 🎥 [Video Demo](#) *(Coming Soon)*
-- 📝 [API Reference](#) *(Coming Soon)*
-- 🔧 [Troubleshooting Guide](#) *(Coming Soon)*
+<details>
+<summary>Click to expand configuration details</summary>
+
+- `framework.properties`: Main config for environment, browser, DB, etc.
+- `testng-regression.xml` / `testng-smoke.xml`: Test suite definitions
+- Environment variables for Dockerized runs
+
+</details>
 
 ---
+
+# Test Settings
+test.environment=dev
+test.parallel=true
+test.thread.count=3
+
+# Reporting
+allure.report.directory=target/allure-results
+take.screenshot.on.failure=true
+```
+
+### Environment Variables
+
+For sensitive data, use environment variables:
+
+```bash
+# Database credentials
+export DB_PASSWORD=your_secure_password
+
+# Browser selection
+export BROWSER=firefox
+
+# Headless mode
+export HEADLESS=true
+```
+
+## 🧪 Running Tests
+
+### Run All Tests
+```bash
+mvn test
+```
+
+### Run Specific Test Class
+```bash
+mvn test -Dtest=LoginTest
+```
+
+### Run with Specific Browser
+```bash
+mvn test -Dbrowser=firefox
+```
+
+### Run in Headless Mode
+```bash
+mvn test -Dheadless=true
+```
+
+### Run Tests in Parallel
+```bash
+mvn test -Dparallel=methods -DthreadCount=4
+```
+
+## 📊 Reports
+
+### Allure Reports
+1. Run tests: `mvn test`
+2. Generate report: `mvn allure:report`
+3. View report: `mvn allure:serve`
+
+### JaCoCo Code Coverage
+1. Run tests with coverage: `mvn clean test jacoco:report`
+2. View coverage report: `target/site/jacoco/index.html`
+
+## 🔧 Development Guidelines
+
+### Creating New Tests
+
+1. **Extend BaseTest**
+   ```java
+   public class LoginTest extends BaseTest {
+       @Test
+       public void testLogin() {
+           navigateToApplication();
+           // Your test code here
+       }
+   }
+   ```
+
+2. **Use Page Object Model**
+   ```java
+   LoginPage loginPage = new LoginPage();
+   loginPage.login("username", "password");
+   ```
+
+3. **Add Logging**
+   ```java
+   logger.info("Performing login with username: {}", username);
+   ```
+
+4. **Use Allure Annotations**
+   ```java
+   @Step("Login with username: {0}")
+   public void login(String username) {
+       // Implementation
+   }
+   ```
+
+### Best Practices
+
+- ✅ Use descriptive test method names
+- ✅ Add proper logging and assertions
+- ✅ Use Page Object Model pattern
+- ✅ Handle waits properly
+- ✅ Clean up test data
+- ✅ Use environment variables for sensitive data
+- ✅ Write maintainable and readable code
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Driver not found**
+   - WebDriverManager automatically handles driver downloads
+   - Check internet connection
+
+2. **Tests fail in CI/CD**
+   - Use headless mode: `-Dheadless=true`
+   - Set proper environment variables
+
+3. **Browser not launching**
+   - Check browser version compatibility
+   - Verify browser installation
+
+4. **Tests timing out**
+   - Increase timeout values in config.properties
+   - Check network connectivity
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+> **PRs welcome!** Please read [CONTRIBUTING.md](CONTRIBUTING.md).
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<p align="center">
+   <img src="https://contrib.rocks/image?repo=moqaddasQA/openmrs-healthcare-framework" alt="Contributors"/>
+</p>
 
 ---
 
-## 👤 Author
+## 📝 Changelog/Roadmap
 
-<div align="center">
+See [CHANGELOG.md](CHANGELOG.md) for release history.
 
-**Moqaddas Rahim**
+<details>
+<summary>Planned Features</summary>
 
-SDET | QA Automation Engineer
+- [ ] GitHub Actions CI/CD
+- [ ] Enhanced Docker support
+- [ ] More sample test cases
+- [ ] Advanced reporting
 
-[![GitHub](https://img.shields.io/badge/GitHub-moqaddasQA-181717?style=for-the-badge&logo=github)](https://github.com/moqaddasQA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/moqaddas-rauf)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:moqaddasr@gmail.com)
-
-</div>
-
-
----
-
-<div align="center">
-
-## ⭐ Show Your Support
-
-If you find this project helpful, please consider giving it a ⭐!
+</details>
 
 ---
 
-## 📜 License
+## 👥 Authors & Acknowledgments
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+| Name | GitHub |
+|------|--------|
+| Moqaddas | [@moqaddasQA](https://github.com/moqaddasQA) |
 
----
-
-## 🙏 Acknowledgments
-
-<table>
-<tr>
-<td align="center" width="33%">
-
-**🎯 Test Application**
-<br/>
-[ParaBank](https://parabank.parasoft.com/)
-<br/>
-*by Parasoft*
-
-</td>
-<td align="center" width="33%">
-
-**🤝 Community**
-<br/>
-Selenium WebDriver
-<br/>
-TestNG Contributors
-
-</td>
-<td align="center" width="33%">
-
-**💡 Inspiration**
-<br/>
-Open Source QA
-<br/>
-Best Practices
-
-</td>
-</tr>
-</table>
+> **Acknowledgments:**
+> Thanks to the OpenMRS community and all contributors!
 
 ---
 
-### 🚀 Built with passion for quality automation
+## 📄 License
 
-**Made with ❤️ by [Moqaddas Rahim](https://github.com/moqaddasQA)**
+This project is licensed under the [MIT License](LICENSE).
 
-<sub>Last Updated: December 2025</sub>
+---
 
-</div>
+## 🔗 Useful Links
+
+- [OpenMRS](https://openmrs.org/)
+- [Selenium WebDriver](https://www.selenium.dev/)
+- [TestNG](https://testng.org/)
+- [Cucumber](https://cucumber.io/)
+- [REST Assured](https://rest-assured.io/)
+- [Allure Reports](https://docs.qameta.io/allure/)
+- [JaCoCo](https://www.jacoco.org/jacoco/)
+- [Docker](https://www.docker.com/)
+- [Maven](https://maven.apache.org/)
+
+<p align="right">[⬆️ Back to Top](#readme)</p>
