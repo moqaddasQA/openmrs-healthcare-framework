@@ -95,11 +95,13 @@
 
 ---
 
+
 ## 📑 Table of Contents
-- [🎯 Features](#-features)
-- [🏗️ Architecture Overview](#️-architecture-overview)
+- [🌟 Project Highlights](#-project-highlights)
+- [🧩 Framework Architecture](#-framework-architecture)
+- [🛠️ Tech Stack](#-tech-stack)
 - [⚡ Quick Start](#-quick-start)
-- [📦 Prerequisites](#-prerequisites)
+- [📋 Prerequisites](#-prerequisites)
 - [🚀 Installation & Setup](#-installation--setup)
 - [🧪 Running Tests](#-running-tests)
 - [📊 Reports & Coverage](#-reports--coverage)
@@ -113,6 +115,48 @@
 - [🔗 Useful Links](#-useful-links)
 
 <p align="right">[⬆️ Back to Top](#readme)</p>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Technology | Version | Purpose |
+|:----------:|:-------:|:-------:|
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="40"/> <br/> **Java** | 21 | Core Language |
+| <img src="https://selenium.dev/images/selenium_logo_square_green.png" width="40"/> <br/> **Selenium** | 4.31.0 | Browser Automation |
+| <img src="https://avatars.githubusercontent.com/u/12528662?s=200&v=4" width="40"/> <br/> **TestNG** | 7.11.0 | Test Framework |
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/maven/maven-original.svg" width="40"/> <br/> **Maven** | 3.x | Build Tool |
+| <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" width="40"/> <br/> **Allure** | 2.26.0 | Test Reporting |
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="40"/> <br/> **Docker** | Latest | Containerization |
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="40"/> <br/> **MySQL** | 8.x | Test Data |
+
+</div>
+
+---
+
+## 📋 Prerequisites
+
+<table><tr><td width="50%" valign="top">
+
+<b>Required</b>
+<ul>
+   <li>☕ Java 21+ <a href="https://www.oracle.com/java/technologies/downloads/#java21">(Download)</a></li>
+   <li>📦 Maven 3.x <a href="https://maven.apache.org/download.cgi">(Download)</a></li>
+   <li>🔧 Git <a href="https://git-scm.com/downloads">(Download)</a></li>
+</ul>
+
+</td><td width="50%" valign="top">
+
+<b>Optional</b>
+<ul>
+   <li>🐳 Docker (for containerized runs)</li>
+   <li>📊 Allure CLI (for reports)</li>
+   <li>🧪 ChromeDriver (latest)</li>
+</ul>
+
+</td></tr></table>
 
 ---
 
