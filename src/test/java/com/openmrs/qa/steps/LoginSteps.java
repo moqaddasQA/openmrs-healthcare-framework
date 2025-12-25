@@ -62,17 +62,23 @@ public class LoginSteps {
 
     @Then("I should see the error message {string}")
     public void iShouldSeeTheErrorMessage(String expectedErrorMessage) {
-        // FIX: Wait for the error message to actually appear
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // 1. Increase wait to 20 seconds for the public demo server
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        // This locator matches the one in your LoginPage logs
-        By errorLocator = By.xpath("//*[contains(text(), 'Invalid') or contains(text(), 'invalid')]");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+        // 2. Use '.' instead of 'text()' -> This finds the text even if it's nested in <span> or <b> tags
+        // We only search for the first word "Invalid" to keep the locator simple and robust
+        By errorLocator = By.xpath("//*[contains(., 'Invalid')]");
 
-        // Now it is safe to check the text
-        // (We manually grab the text here to be 100% sure, bypassing any issues in the Page Object)
-        String actualErrorMessage = driver.findElement(errorLocator).getText();
-        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage),
-                "Error message did not match! Expected: " + expectedErrorMessage + " but found: " + actualErrorMessage);
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator));
+        } catch (Exception e) {
+            // This helps us see in the logs if it failed specifically here
+            throw new AssertionError("Error message not visible after 20 seconds", e);
+        }
+
+        // 3. Verify the full text matches what we expect
+        String actualText = driver.findElement(errorLocator).getText();
+        Assert.assertTrue(actualText.contains(expectedErrorMessage),
+                "Expected error to contain: '" + expectedErrorMessage + "', but found: '" + actualText + "'");
     }
 }
